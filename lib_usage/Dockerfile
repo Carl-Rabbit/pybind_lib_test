@@ -5,10 +5,12 @@ RUN apt-get install -y python3-numpy python3-scipy python3-pip build-essential g
 RUN pip3 install -U pip
 RUN python3 --version | grep 'Python 3.10'
 
-RUN git clone https://github.com/Carl-Rabbit/pybind_lib_test.git
+RUN apt install -y cmake g++ make
 
-RUN pip3 install -r ./pybind_lib_test/requirements.txt
-RUN pip3 install ./pybind_lib_test/lib_src
+RUN git clone --recursive https://github.com/Carl-Rabbit/pybind_lib_test.git
 
-WORKDIR /pybind_lib_test/lib_usage
-CMD ["python3", "main.py"]
+# RUN pip3 install -r ./pybind_lib_test/requirements.txt
+# RUN pip3 install ./pybind_lib_test/lib_src
+
+# WORKDIR /pybind_lib_test/lib_usage
+# CMD ["python3", "main.py"]

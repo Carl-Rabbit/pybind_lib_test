@@ -5,7 +5,7 @@ project(my_test)
 # set(PYTHON_EXECUTABLE "/usr/bin/python3.8")
 # set(PYTHON_INCLUDE_DIRECTORY "/usr/include/python3.8/Python.h")
 
-add_subdirectory(extern/pybind11)
+add_subdirectory(pybind11)
 pybind11_add_module(my_test my_test.cpp)
 
 # EXAMPLE_VERSION_INFO is defined by setup.py and passed into the C++ code as a
