@@ -2,7 +2,7 @@
 #include <pybind11/numpy.h>
 
 #include "func/add.h"
-#include "py/func/pyfunc.h"
+#include "py/func/py_func.h"
 
 namespace py = pybind11;
 

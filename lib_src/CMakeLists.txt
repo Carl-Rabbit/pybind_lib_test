@@ -5,3 +5,4 @@ add_subdirectory(third_party/pybind11)
 
 include_directories(include)
 add_subdirectory(src)
+add_subdirectory(test)
