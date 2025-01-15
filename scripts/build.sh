@@ -1,3 +1,3 @@
 #!/bin/bash
 cd lib_src
-pip install .
+pip install . -v
