@@ -44,12 +44,12 @@ py::array_t<double> add_arrays_1d(py::array_t<double>& input1, py::array_t<doubl
 
 }
 
-PYBIND11_MODULE(my_test, m) {
+PYBIND11_MODULE(test_module, m) {
     m.doc() = R"pbdoc(
         Pybind11 example plugin
         -----------------------
 
-        .. currentmodule:: my_test
+        .. currentmodule:: test_module
 
         .. autosummary::
            :toctree: _generate
