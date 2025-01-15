@@ -115,6 +115,8 @@ class CMakeBuild(build_ext):
         if not build_temp.exists():
             build_temp.mkdir(parents=True)
 
+        cmake_args += [f"-DCMAKE_BUILD_TYPE={cfg}"]
+        print(f"cmake_args={cmake_args}")
         subprocess.run(
             ["cmake", ext.sourcedir, *cmake_args], cwd=build_temp, check=True
         )
@@ -127,16 +129,10 @@ class CMakeBuild(build_ext):
 # logic and declaration, and simpler if you include description/version in a file.
 setup(
     name="my_test",
-    version="0.0.1",
-    author="xxxx",
-    author_email="xxxx",
-    description="A test project using pybind11 and CMake",
-    long_description="",
+    version="0.1.0",
     ext_modules=[CMakeExtension("my_test")],
     cmdclass={"build_ext": CMakeBuild},
     zip_safe=False,
     extras_require={},
-    python_requires=">=3.7",
+    python_requires=">=3.7"
 )
-
-# cmake /home/ann-benchmark/zhengxin/pybind_test/my_test -DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/home/ann-benchmark/zhengxin/pybind_test/my_test/build/lib.linux-x86_64-cpython-310/ -DPYTHON_EXECUTABLE=/home/ann-benchmark/zhengxin/ann-benchmarks/env/bin/python3.10 -DCMAKE_BUILD_TYPE=Release -DEXAMPLE_VERSION_INFO=0.0.1
