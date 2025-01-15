@@ -21,6 +21,10 @@ PYBIND11_MODULE(test_module, m) {
            add_arrays_1d
     )pbdoc";
 
+    m.def("add", &add, R"pbdoc(
+        Add two double numbers
+    )pbdoc");
+
     m.def("add_arrays_1d", &add_arrays_1d, R"pbdoc(
         Add two 1d arrays
     )pbdoc");
